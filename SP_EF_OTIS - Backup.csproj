@@ -2,13 +2,12 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net7.0-ios</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <UserSecretsId>35dbca01-4ab5-4fdd-bb8b-408398e2c410</UserSecretsId>
     <BaseIntermediateOutputPath></BaseIntermediateOutputPath>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
-    <StartupObject>SP_EF_OTIS.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,10 +26,6 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.4" />
   </ItemGroup>
 
-	<ItemGroup>
-		<None Update="appsettings.json">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</None>
-	</ItemGroup>
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 
 </Project>
