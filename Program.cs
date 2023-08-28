@@ -66,8 +66,6 @@ namespace SP_EF_OTIS
                 {
                     endApp = true;
                 }
-
-
             } while (!endApp);
             Console.WriteLine("//********");
             return;
@@ -154,13 +152,14 @@ namespace SP_EF_OTIS
 
             Console.Write("Введите фамилию клиента: ");
             var fName = Console.ReadLine().Trim();
-            Client? client = tableClient.GetWithInclude(x => x.Firstname.StartsWith(fName)).FirstOrDefault();
+            Client? client = tableClient.GetWithInclude(x => x.Lastname.StartsWith(fName)).FirstOrDefault();
             while (client == null)
             {
                 Console.Write("Это неверный ввод. Пожалуйста, введите фамилию правильно: ");
                 fName = Console.ReadLine();
                 client = tableClient.GetWithInclude(x => x.Lastname.StartsWith(fName)).FirstOrDefault();
             }
+            bankAcc.Clientid = client.Id;
             Console.Write("Укажите валюту счета в виде кода: ");
             var curCode = Console.ReadLine().Trim();
             Currency? cur = tableCurrency.GetWithInclude(x => x.Code.StartsWith(curCode)).FirstOrDefault();
